@@ -31,10 +31,14 @@ sap.ui.define(
                 .then(function (responce) {
                     oJson.setData(responce);
                     that.oLocalModel = oJson;
+                   debugger;
                     that.getView().setModel(that.oLocalModel, "Detail");
+                    // if (responce.Zstatus != 'PENDING'){
+                    //     MessageBox.show("Data is already Processed");    
+                    // }
                 })  
                 .catch(function (Error, sPath) {
-                    oBusy.close();
+                   
                     MessageBox.error("Error in Processing");
 
                 });
@@ -49,7 +53,12 @@ sap.ui.define(
                 oJson = this.getView().getModel("Detail").getData();
                 debugger;
                 oJson.Zstatus = status;
-                oJson.Znewdt = this.getView().byId("DP1").getDateValue();
+                oJson.Znewdate = this.getView().byId("DP1").getValue();
+        //         var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+        //             pattern: "yyyy-MM-dd"
+        //   });
+        //   oJson.Znewdt = dateFormat.format(new Date(oJson.Znewdt), true);
+          oJson.Znewdate = oJson.Znewdate + "T23:00:00";
                 oDataCall.UpdateCall(oModel, this.sEntitySet, oJson)
                 .then(function (responce) {
                     debugger;

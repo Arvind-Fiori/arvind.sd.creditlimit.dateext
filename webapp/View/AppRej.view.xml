@@ -5,10 +5,9 @@
     xmlns:core="sap.ui.core"
     xmlns:f="sap.ui.layout.form"
     controllerName="arvind.sd.creditlimit.dateext.controller.AppRej"
-    
 >
     <Page
-        id="idpage3" 
+        id="idpage3"
         title="Request No. { path : 'Detail>/Zreqnum',
             type : 'sap.ui.model.odata.type.String', 
             
@@ -16,7 +15,6 @@
                isDigitSequence : true,
                      maxLength : 10 }
             }"
-       
     >
         <f:SimpleForm
             id="3rdDetail"
@@ -47,7 +45,7 @@
                 /> -->
                 <Label text="Request Date" />
                 <Text
-                text="{
+                    text="{
                      path : 'Detail>/Zreqdt',
                     type: 'sap.ui.model.type.DateTime',
 				formatOptions: {
@@ -55,12 +53,11 @@
                     }
 
                      }"
-             
                 />
                 <Label text="Customer" />
-                <Text text="{Detail>/Kunnr}"
+                <Text
+                    text="{Detail>/Kunnr}"
                     id="idKunnr"
-                    
                 />
                 <Label text="SalesOrg" />
                 <Text
@@ -69,51 +66,35 @@
                 />
 
                 <Label text="Division" />
-                <Text text="{Detail>/Spart}"
-                    
-                />
-                <Label
-                    text="Profit Center"
-                />
-                 <Text text="{Detail>/Prctr}"
-                    
-                />
+                <Text text="{Detail>/Spart}" />
+                <Label text="Profit Center" />
+                <Text text="{Detail>/Prctr}" />
                 <!-- <Label text="INR" /> -->
                 <Label text="Name 1" />
-              <Text text="{Detail>/Name1}"
-                  
-                />
+                <Text text="{Detail>/Name1}" />
                 <!-- 
                <core:Title text="Credit Limit Detail" /> 
                 <core:Title text="Customer Credit Deatils" />
                 <core:Title text="Other Details" /> -->
 
                 <Label text="Total O/s Rs (lacs)" />
- <Text text="{Detail>/Ztotos}"
-                  
-                />
+                <Text text="{Detail>/Ztotos}" />
 
                 <Label text="Total Overdue Rs" />
-                <Text text="{Detail>/Ztotod}"
-                 
-                />
+                <Text text="{Detail>/Ztotod}" />
 
                 <Label text="Overdue Rate" />
-                <Text  
+                <Text
                     text="{
-                     path : 'Detail>/Zcdlmt',
-                    type: 'sap.ui.model.type.DateTime',
-				formatOptions: {
-					pattern: 'dd.MM.yyyy' 
-                    }
+                     path : 'Detail>/Zcdlmt'
+                   
 
                      }"
                 />
 
-
                 <Label text="Upto Date" />
-              
-                <Text  
+
+                <Text
                     text="{
                      path : 'Detail>/Zstrtdt',
                     type: 'sap.ui.model.type.DateTime',
@@ -126,45 +107,45 @@
 
                 <Label text="New date" />
                 <!-- enabled = "{=${Detail>Zstatus}=== 'PENDING' ? true : false}" -->
-                <DatePicker width="50%" 
-					id="DP1"
-                    enabled = "{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
+                <DatePicker
+                    width="50%"
+                    id="DP1"
+                    enabled="{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
+                    value="{
+                     path : 'Detail>/Znewdt',
+                     
+                    type: 'sap.ui.model.type.Date',
+				formatOptions: {style: 'medium',
+                
+                strictParsing: true,
+                 UTC: true,pattern: 'dd.MM.YYYY'}}" valueState="None" displayFormat="dd.MM.YYYY" placeholder="DD.MM.YYYY"
+                    
+                />
+              
+                <!-- <Input 
                     value="{
                      path : 'Detail>/Znewdt',
                     type: 'sap.ui.model.type.DateTime',
+                    
 				formatOptions: {
-					pattern: 'dd.MM.yyyy' 
-                    }
-                    }"
-					/>
-                 <!-- <Input 
-                    value="{
-                     path : 'Detail>/Znewdt',
-                    type: 'sap.ui.model.type.DateTime',
-				formatOptions: {
-					pattern: 'dd.MM.yyyy' 
+
+					pattern: 'dd.MM.yyyy',  
+                    UTC: true 
                     }
 
                      }"
                 /> -->
 
                 <Label text="Status" />
-                 <Text text="{Detail>/Zstatus}"
-                  
-                />
+                <Text text="{Detail>/Zstatus}" />
 
                 <Label text="Requester User ID" />
-               <Text
-                   text="{Detail>/Zreqtid}"
-                />
-                 <Label text="Requester User Name" />
-                  <Text
-                   text="{Detail>/ZreqtUserName}"
-                />
+                <Text text="{Detail>/Zreqtid}" />
+                <Label text="Requester User Name" />
+                <Text text="{Detail>/ZreqtUserName}" />
                 <Label text="Requester Date" />
 
-                
-                 <Text  
+                <Text
                     text="{
                      path : 'Detail>/Zreqtdt',
                     type: 'sap.ui.model.type.DateTime',
@@ -175,30 +156,23 @@
                      }"
                 />
                 <Label text="Requester Time" />
-                <Text 
-                   text="{
+                <Text
+                    text="{
                      path : 'Detail>/Zreqttm',
                      type: 'sap.ui.model.odata.type.Time',
       formatOptions: { style: 'medium' }
 
                  }"
-                   
                 />
-                
-               
+
                 <Label text="Approver User ID" />
-                <Text
-                  text="{Detail>/Zaprid}" 
-                />
-               
+                <Text text="{Detail>/Zaprid}" />
+
                 <Label text="Approver user name" />
-                 <Text
-                 text="{Detail>/ZaprUserName}"
-                  
-                />
+                <Text text="{Detail>/ZaprUserName}" />
                 <Label text="Approver Date" />
-               
-                 <Text  
+
+                <Text
                     text="{
                      path : 'Detail>/Zaprdt',
                     type: 'sap.ui.model.type.DateTime',
@@ -210,19 +184,16 @@
                 />
                 <Label text="Approver Time" />
 
-                <Text 
-                   text="{
+                <Text
+                    text="{
                      path : 'Detail>/Zaprtm',
                      type: 'sap.ui.model.odata.type.Time',
       formatOptions: { style: 'medium' }
 
                  }"
-                   
                 />
                 <Label text="Remarks" />
-                 <Text text="{Detail>/Zremark}"
-                  
-                />
+                <Text text="{Detail>/Zremark}" />
             </f:content>
         </f:SimpleForm>
         <footer>
@@ -234,7 +205,7 @@
                     press="onApprove"
                     type="Accept"
                     icon="sap-icon://accept"
-                     enabled = "{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
+                    enabled="{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
                 />
                 <Button
                     id="idReject"
@@ -242,8 +213,7 @@
                     press="onReject"
                     type="Reject"
                     icon="sap-icon://decline"
-                    
-                     enabled = "{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
+                    enabled="{=${Detail>/Zstatus}=== 'PENDING' ? true : false}"
                 />
             </Toolbar>
         </footer>
